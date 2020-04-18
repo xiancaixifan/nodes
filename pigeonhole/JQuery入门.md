@@ -1,20 +1,18 @@
 # Jquery入门学习
 
 ## 一.简介
-### 1.Jquery是基于JavaScript的一种框架,兼容主流浏览器,提供了dom,animate(JQ+CSS),ajav;
 
-### 2.Jquery2.0后版本不支持IE6/7/8浏览器
-```
-    特点
---- write less, do more
-```
+**落后与时代 2020**
+
+> 特点就是垃圾
+
+
 
 
 ## 二.引入对象获取
 ### 1.引入
 ```JavaScript
-<script src="jquery-1.11.0" type=""text/javascript>
-</script>
+<script src="jquery-1.11.0" type=""text/javascript></script>
 ```
 ### 2. 对象获取
 ```JavaScript
@@ -56,27 +54,26 @@
 </script>
 ```
 
-## 三.JQuery对象和Dom对象的关系
-### 1. Dom对象封装在Jquery对象中,他们可以相互转换,但是**无法直接使用Jqyery对象调用dom的方法**
-### 2. 转换语法
-    - Dom-&gt;JQ:<font color="red">$(dom对象)</font>
-    - JQ-&gt;DOM:<font color="red">JQ[0] 或 JQ.get()</font> 
 
-```JavaScript
-觥筹啊觥筹Jquery_ol
-index.html:18 觥筹啊觥筹Dom_ol1
-ol.get(0).value
-"觥筹啊觥筹"
-ol1.value
-"觥筹啊觥筹"
+
+## 三.`JQuery`对象和Dom对象的关系
+
+### 1. 从`Jquery`对象中获取DOM
+
+```
+Jquery.get(0)
 ```
 
 
-### 3. 基本语法
+
+
+
+
+### 2. `Jquery` 钩子顺序
 - 页面加载函数
-    - 最后执行,最根本的: window.onload=function(){};
-    - 在其他非加载完毕代码执行后执行,最先执行: $(document).ready();
-    - 回调当前函数对象,所有执行顺序仅比window.onload高一点: $(document).ready(fnuction(){});
+    - 最后执行,最根本的: `window.onload=function(){};`
+    - 在其他非加载完毕代码执行后执行,最先执行:` $(document).ready();`
+    - 回调当前函数对象,所有执行顺序仅比`window.onload`高一点: `$(document).ready(fnuction(){});`
 ```java
 <script type="text/javascript">
 
@@ -95,17 +92,16 @@ $(document).ready(console.log("Jq1_页面加载完成"));//No.1
 
 
 
-## 四.Jquery选择器
+## 四.`Jquery`选择器
 **用来获取元素对象的**
 ### 1. 基本选择器
+
 |名称|说明|语法|
 |:-----------|:-----------|:-----------|
-|id选择器|根据id来选择元素|$("#config")
-|元素选择器|根据标签来选择元素|$("div")
-|类选择器|更具类名来获取元素|$(".username")
-```
-备注:
-```
+|id选择器|根据id来选择元素|$("#config")|
+|元素选择器|根据标签来选择元素|$("div")|
+|类选择器|更具类名来获取元素|$(".username")|
+
 ### 2. 层级选择器
 |名称|说明|语法|
 |:-----------|:-----------|:-----------|
@@ -113,24 +109,21 @@ $(document).ready(console.log("Jq1_页面加载完成"));//No.1
 |父子选择器|A>B ,获取A元素内部子级标签中所有的B元素,**不包括孙子**|$("#ul > li")|
 |下级选择器|A+B ,获取和A元素平级的下一个B元素|$("#ul+li")|
 |下下级选择器|A~B ,获取和A元素平级的下面**所有**B元素|$("#ul~li")|
-```
-    备注:
-```
+
+
 ### 3. 基本过滤器
 |名称|说明|语法|
 |:-----------|:-----------|:-----------|
 |:first|获得当前元素中的**第一个**元素| $("#spnMove:animated")|
 |:last|获得当前元素中的**最后**一个元素| $("#spnMove:animated")|
-|:even|获得当前元素中索引号为**偶数**的元素,索引从0开始|
-|:odd|获得当前元素中索引号为**奇数**的元素,索引从0开始|
-|:eq(inedx)|获取**指定**索引的元素,索引从0开始|
-|:gt(index)|获取**大于**给定索引的元素,索引从0开始|
-|:lt(index)|获取**小于**给定索引的元素,索引从0开始|
-|:header|获取标题类型的元素|
-|:animated|获取正在执行的d动画效果元素|
-```
-    备注:
-```
+|:even|获得当前元素中索引号为**偶数**的元素,索引从0开始|同上|
+|:odd|获得当前元素中索引号为**奇数**的元素,索引从0开始|同上|
+|:eq(inedx)|获取**指定**索引的元素,索引从0开始|同上|
+|:gt(index)|获取**大于**给定索引的元素,索引从0开始|同上|
+|:lt(index)|获取**小于**给定索引的元素,索引从0开始|同上|
+|:header|获取标题类型的元素|同上|
+|:animated|获取正在执行的d动画效果元素|同上|
+
 
 ### 4. 属性选择器(不需要**":"**)
 |名称|说明|语法|
@@ -142,17 +135,16 @@ $(document).ready(console.log("Jq1_页面加载完成"));//No.1
 |[属性名$=值]|获取属性名以值结尾的元素|
 |[属性名*=值]|获取属性名含有值的元素|
 |[以上选择器][xx][xx]|复合属性选择器,多个属性同时过滤返回满足所有的结果|
-```
-备注:
-```
+
 
 ### 5. 表单对象选择器
 |名称|说明|语法|
 |:-----------|:-----------|:-----------|
 |:enable|匹配所有元素|
 |:disable|匹配所有不可用元素|
-|:checked|选取匹配所有被选中的元素(单选框,多选框等)|$('input[type=checkbox]:checked')
+|:checked|选取匹配所有被选中的元素(单选框,多选框等)|$('input[type=checkbox]:checked')|
 |:selected|选取所有被选中项元素(下拉框)|
+
 ```
     备注:
 ```
@@ -181,10 +173,10 @@ $(document).ready(console.log("Jq1_页面加载完成"));//No.1
 ### 2.常用的方法
 |名称|说明|语法|
 |:---|:---|:---|
-|val()|通常用来操作标准的表单对象|用来获取value和设置value的值|$('#xxx').val('[xxx]');
-|val|打印一个构造,没有意义|没意义哦|
-|text()|获取或改变指定元素的文本|$("xx").text()|
-|html()|获取或改变指定元素的html元素|$("xx").html|
+|val()| 通常用来操作标准的表单对象|用来获取value和设置value的值|$('#xxx').val('[xxx]');|
+|val| 打印一个构造,没有意义|没意义哦|
+|text()| 获取或改变指定元素的文本| `$("xx").text()`|
+|html()| 获取或改变指定元素的htm l元素|$("xx").html|
 
 
 ### 3.Jquery的绑定事件和解绑时间
@@ -298,6 +290,7 @@ Jq对象.unbind("" "" ""); 中间以空格隔开
         });
 ```
 <a href="http://www.runoob.com/jquery/jquery-plugin-validate.html">菜鸟详细教程</a>
+
 #### 2. 自定义校验
 ```JavaScript
 $.validator.addMethod("自定义校验规则名字",function(value,element,params){
